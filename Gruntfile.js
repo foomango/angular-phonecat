@@ -1,6 +1,7 @@
 module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-karma');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     grunt.initConfig({
         'meta': {
@@ -24,6 +25,14 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        'jshint': {
+            'options': {
+                'reporter': require('jshint-jenkins-violations-reporter'),
+                'reporterOutput': 'test_out/jshint.xml',
+                'force': true
+            },
+            'beforeconcat': ['app/js/**/*.js']
         }
     });
 
