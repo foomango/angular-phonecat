@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Chrome 36.0.1985 (Linux)" package="unit" timestamp="2014-11-11T07:38:41" id="0" hostname="CHN-FERRY-VM" tests="5" errors="0" failures="0" time="0.145">
+  <testsuite name="Chrome 36.0.1985 (Linux)" package="unit" timestamp="2014-11-17T08:10:28" id="0" hostname="CHN-FERRY-VM" tests="5" errors="0" failures="0" time="0.229">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36"/>
     </properties>
-    <testcase name="should create &quot;phones&quot; model with 2 phones fetched from xhr" time="0.114" classname="unit Chrome 36.0.1985 (Linux).PhoneCat controllers PhoneListCtrl"/>
-    <testcase name="should set the default value of orderProp model" time="0.01" classname="unit Chrome 36.0.1985 (Linux).PhoneCat controllers PhoneListCtrl"/>
-    <testcase name="should fetch phone detail" time="0.009" classname="unit Chrome 36.0.1985 (Linux).PhoneCat controllers PhoneDetailCtrl"/>
+    <testcase name="should create &quot;phones&quot; model with 2 phones fetched from xhr" time="0.191" classname="unit Chrome 36.0.1985 (Linux).PhoneCat controllers PhoneListCtrl"/>
+    <testcase name="should set the default value of orderProp model" time="0.013" classname="unit Chrome 36.0.1985 (Linux).PhoneCat controllers PhoneListCtrl"/>
+    <testcase name="should fetch phone detail" time="0.011" classname="unit Chrome 36.0.1985 (Linux).PhoneCat controllers PhoneDetailCtrl"/>
     <testcase name="should convert boolean values to unicode checkmark or cross" time="0.007" classname="unit Chrome 36.0.1985 (Linux).filter checkmark"/>
-    <testcase name="check the existence of Phone factory" time="0.005" classname="unit Chrome 36.0.1985 (Linux).service"/>
+    <testcase name="check the existence of Phone factory" time="0.007" classname="unit Chrome 36.0.1985 (Linux).service"/>
     <system-out><![CDATA[
 ]]></system-out>
     <system-err/>
