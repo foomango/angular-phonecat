@@ -2,8 +2,12 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-karma');
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.initConfig({
+        'pkg': grunt.file.readJSON('package.json'),
+
         'meta': {
             'jsFilesForTesting': [
                 'app/bower_components/angular/angular.js',
@@ -26,6 +30,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         'jshint': {
             'options': {
                 'reporter': require('jshint-jenkins-violations-reporter'),
@@ -33,6 +38,24 @@ module.exports = function (grunt) {
                 'force': true
             },
             'beforeconcat': ['app/js/**/*.js']
+        },
+
+        'concat': {
+            'dist': {
+                'src': ['app/js/**/*.js'],
+                'dest': 'dist/<%= pkg.name %>-<%= pkg.version %>.js'
+            }
+        },
+
+        'uglify': {
+            'options': {
+                'mangle': false
+            },
+            'dist': {
+                'files': {
+                    'dist/<%= pkg.name %>-<%= pkg.version %>.min.js': ['dist/<%= pkg.name %>-<%= pkg.version %>.js']
+                }
+            }
         }
     });
 
