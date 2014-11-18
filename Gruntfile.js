@@ -28,6 +28,26 @@ module.exports = function (grunt) {
                         'app/js/**/*.js'
                     ]
                 }
+            },
+
+            'dist': {
+                'options': {
+                    'configFile': 'test/karma_grunt_dist.conf.js',
+                    'files': [
+                        '<%= meta.jsFilesForTesting %>',
+                        'dist/<%= pkg.name %>-<%= pkg.version %>.js'
+                    ]
+                }
+            },
+
+            'minified': {
+                'options': {
+                    'configFile': 'test/karma_grunt_minified.conf.js',
+                    'files': [
+                        '<%= meta.jsFilesForTesting %>',
+                        'dist/<%= pkg.name %>-<%= pkg.version %>.min.js'
+                    ]
+                }
             }
         },
 
@@ -65,6 +85,8 @@ module.exports = function (grunt) {
             'jshint',
             'karma:development',
             'concat',
-            'uglify'
+            'karma:dist',
+            'uglify',
+            'karma:minified'
         ]);
 };
